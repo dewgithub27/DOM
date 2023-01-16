@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        p {
+            font-weight: bold;
+        }
+
+        div.container {
+            border-bottom: 1px solid black;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <div class="container">
+    <label for="typelabel">Type a number: </label>
+    <input type="number" id="myNumber">
+    <button id="btn1">Click Here!</button>
+    </div>
+    <p id="message"></p>
+    <script>
+        function myfun() {   
+            const nmr1 = document.getElementById('myNumber').valueAsNumber; 
+            if (nmr1 % 3 === 0) {
+                return "Fizz";
+            } else if (nmr1 % 5 === 0) {
+                return "Buzz!";
+            } else if (nmr1 % 3 === 0 && nmr1 % 5 === 0) {
+                return "FizzBuzz!";
+            } else {
+                return nmr1;
+            }
+        }
+
+        const btn = document.getElementById('btn1');
+
+        function fun1() {
+            document.getElementById('message').innerHTML = myfun();
+        }
+
+        btn.addEventListener('click', myfun);
+        btn.addEventListener('click', fun1);
+
+    </script>
+</body>
+</html>
